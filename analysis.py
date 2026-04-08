@@ -34,10 +34,9 @@ sales_by_product.plot(kind="bar")
 plt.title("Sales by Product")
 plt.xlabel("Product")
 plt.ylabel("Sales")
-plt.show()
+plt.savefig("sales_chart.png")
 
 print("\nINSIGHTS:")
 print("- Highest selling product:", sales_by_product.idxmax())
 print("- Total revenue:", df["Sales"].sum())
 
-plt.savefig("sales_chart.png")
