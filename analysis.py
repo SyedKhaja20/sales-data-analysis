@@ -20,3 +20,24 @@ print(sales_by_product)
 sales_by_region = df.groupby("Region")["Sales"].sum()
 print("\nSales by Region:")
 print(sales_by_region)
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("sales_data.csv")
+
+# Sales by product
+sales_by_product = df.groupby("Product")["Sales"].sum()
+
+# Plot
+sales_by_product.plot(kind="bar")
+plt.title("Sales by Product")
+plt.xlabel("Product")
+plt.ylabel("Sales")
+plt.show()
+
+print("\nINSIGHTS:")
+print("- Highest selling product:", sales_by_product.idxmax())
+print("- Total revenue:", df["Sales"].sum())
+
+plt.savefig("sales_chart.png")
